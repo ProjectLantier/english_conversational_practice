@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.env
+.venv/
+
+# Node
+node_modules/
+
+# OS Files
+.DS_Store
+
+# Database and temporary files
+backend/database.db
+backend/tmp/
+phoneme_*.mp3
+response_*.mp3
+
+# IDE specific
+.vscode/
+.idea/

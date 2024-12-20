@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=supersecretkey
+    container_name: english_conversational_practice_web
