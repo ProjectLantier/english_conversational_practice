@@ -56,6 +56,60 @@ English_Conversational_Practice/
 └─ (Optional) docs/
 ```
 
+### Root Directory
+
+- **`Dockerfile`**: Defines the Docker image configuration for the application, including dependencies and environment setup.
+- **`docker-compose.yml`**: Manages multi-container deployment, linking the backend and frontend services.
+- **`requirements.txt`**: Lists all Python dependencies for the backend.
+- **`README.md`**: A comprehensive guide to the project, including instructions on how to set up, run, and use the application.
+
+### Virtual Environment: `.venv/`
+- Contains the virtual environment setup for the backend. This is typically used during local development.
+
+### Backend Folder: `backend/`
+The backend is the core logic for processing speech, analyzing grammar, generating responses, and serving the frontend.
+
+- **`app.py`**: The main entry point for the Flask application, defining routes and initializing the server.
+- **`config.py`**: Configuration settings for the application, such as API keys and other environment variables.
+- **`routes.py`**: Defines HTTP endpoints for handling frontend requests, such as speech recognition, processing input, and generating responses.
+- **`wsgi.py`**: A WSGI entry point for running the Flask app in production.
+
+### Backend Modules: `backend/modules/`
+Contains the modularized functionality of the application.
+
+- **`audio_processing.py`**: Handles audio conversion and preprocessing (e.g., converting webm to WAV).
+- **`conversation_manager.py`**: Manages the flow of conversations, including intent recognition and response generation.
+- **`database.py`**: (Optional) Handles any database interactions if persistence is needed (e.g., user session storage).
+- **`dialogue_policies.py`**: Defines rules or policies for managing dialogue flow and conversation state.
+- **`entity_extractor.py`**: Extracts relevant entities from user input (e.g., names, dates).
+- **`grammar_checker.py`**: Implements grammar checking using the `language-tool-python` library.
+- **`intent_classifier.py`**: Classifies user input into predefined intents (e.g., question, greeting, statement).
+- **`models.py`**: Loads and manages machine learning models, such as the transformer-based conversational model.
+- **`nlu.py`**: Core natural language understanding (NLU) functionality, combining intent classification and entity recognition.
+- **`pattern_recognizer.py`**: Detects filler words, repetitions, or specific patterns in user input.
+- **`phoneme_audio.py`**: Generates audio samples for IPA phonemes to assist users in pronunciation practice.
+- **`phoneme_map.py`**: Maps words to their IPA phonetic representations for pronunciation analysis.
+- **`pronunciation_analyzer.py`**: Compares user pronunciation with expected phonemes and highlights discrepancies.
+- **`response_generator.py`**: Uses the transformer model to generate contextually appropriate responses.
+- **`speech_recognition.py`**: Implements speech-to-text functionality using Google’s Speech API.
+- **`topics.py`**: Contains predefined topics or prompts for conversation generation. (REDUNDANT)
+
+### Temporary Files: `backend/tmp/`
+- Temporary storage for audio files (e.g., uploaded webm files, intermediate WAV files). These are cleaned up after processing.
+
+### Frontend Folder: `frontend/`
+The frontend provides the user interface for interacting with the application.
+
+- **`index.html`**: The main HTML page that the user interacts with, including buttons for recording, displaying feedback, and showing system responses.
+- **`app.js`**: Contains JavaScript code for handling user interactions, sending audio to the backend, and updating the UI with feedback and system responses.
+- **`styles.css`**: Custom CSS styles for enhancing the visual appearance of the frontend.
+
+### Additional Files
+
+- **`.gitignore`**: Specifies files and folders that should not be included in version control (e.g., virtual environments, temporary files).
+- **`LICENSE`**: (Optional) License file for defining the terms under which your project can be used.
+- **`README.md`**: A markdown file explaining the project objectives, setup instructions, and usage details.
+
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
