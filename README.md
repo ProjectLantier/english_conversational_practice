@@ -56,19 +56,17 @@ English_Conversational_Practice/
 └─ (Optional) docs/
 ```
 
-## Root Directory
+### Root Directory
 
 - **`Dockerfile`**: Defines the Docker image configuration for the application, including dependencies and environment setup.
 - **`docker-compose.yml`**: Manages multi-container deployment, linking the backend and frontend services.
 - **`requirements.txt`**: Lists all Python dependencies for the backend.
 - **`README.md`**: A comprehensive guide to the project, including instructions on how to set up, run, and use the application.
 
-## `.venv/`
+### Virtual Environment: `.venv/`
 - Contains the virtual environment setup for the backend. This is typically used during local development.
 
----
-
-## Backend Folder: `backend/`
+### Backend Folder: `backend/`
 The backend is the core logic for processing speech, analyzing grammar, generating responses, and serving the frontend.
 
 - **`app.py`**: The main entry point for the Flask application, defining routes and initializing the server.
@@ -94,28 +92,23 @@ Contains the modularized functionality of the application.
 - **`pronunciation_analyzer.py`**: Compares user pronunciation with expected phonemes and highlights discrepancies.
 - **`response_generator.py`**: Uses the transformer model to generate contextually appropriate responses.
 - **`speech_recognition.py`**: Implements speech-to-text functionality using Google’s Speech API.
-- **`topics.py`**: Contains predefined topics or prompts for conversation generation.
+- **`topics.py`**: Contains predefined topics or prompts for conversation generation. (REDUNDANT)
 
 ### Temporary Files: `backend/tmp/`
 - Temporary storage for audio files (e.g., uploaded webm files, intermediate WAV files). These are cleaned up after processing.
 
----
-
-## Frontend Folder: `frontend/`
+### Frontend Folder: `frontend/`
 The frontend provides the user interface for interacting with the application.
 
 - **`index.html`**: The main HTML page that the user interacts with, including buttons for recording, displaying feedback, and showing system responses.
 - **`app.js`**: Contains JavaScript code for handling user interactions, sending audio to the backend, and updating the UI with feedback and system responses.
 - **`styles.css`**: Custom CSS styles for enhancing the visual appearance of the frontend.
 
----
-
-## Additional Files
+### Additional Files
 
 - **`.gitignore`**: Specifies files and folders that should not be included in version control (e.g., virtual environments, temporary files).
 - **`LICENSE`**: (Optional) License file for defining the terms under which your project can be used.
 - **`README.md`**: A markdown file explaining the project objectives, setup instructions, and usage details.
-
 
 ## Prerequisites
 
